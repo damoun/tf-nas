@@ -3,16 +3,16 @@ variable "truenas_api_key" {
 }
 
 variable "truenas_base_url" {
-  type = string
+  type        = string
   description = "Base url for the TrueNAS server"
 }
 
 variable "truenas_debug" {
-  type = string
+  type        = string
   description = "Enable debug from the TrueNAS provider"
 }
 
 variable "truenas_pool" {
-  type = string
+  type        = string
   description = "Name of the pool to use on the TrueNAS server"
 }
