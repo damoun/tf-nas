@@ -15,4 +15,5 @@ variable "truenas_debug" {
 variable "truenas_pool" {
   type        = string
   description = "Name of the pool to use on the TrueNAS server"
+  default     = "pool1"
 }
