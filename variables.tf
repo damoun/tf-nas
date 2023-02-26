@@ -10,6 +10,7 @@ variable "truenas_base_url" {
 variable "truenas_debug" {
   type        = string
   description = "Enable debug from the TrueNAS provider"
+  default     = false
 }
 
 variable "truenas_pool" {
