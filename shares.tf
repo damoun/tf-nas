@@ -25,3 +25,15 @@ resource "truenas_share_smb" "private" {
   purpose       = "PRIVATE_DATASETS"
   comment       = "Created by terraform"
 }
+
+resource "truenas_share_smb" "shared" {
+  enabled       = true
+  acl           = true
+  browsable     = true
+  durablehandle = true
+  shadowcopy    = true
+  streams       = true
+  name          = "Shared"
+  path          = truenas_dataset.shared.mount_point
+  comment       = "Created by terraform"
+}

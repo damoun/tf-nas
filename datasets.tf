@@ -30,6 +30,12 @@ resource "truenas_dataset" "private" {
   comments = "Created by terraform"
 }
 
+resource "truenas_dataset" "shared" {
+  name     = "shared"
+  pool     = var.truenas_pool
+  comments = "Created by terraform"
+}
+
 resource "truenas_dataset" "video" {
   name     = "video"
   pool     = var.truenas_pool
