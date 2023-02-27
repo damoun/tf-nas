@@ -23,9 +23,3 @@ resource "truenas_dataset" "persistent_volume" {
   parent   = truenas_dataset.k8s.name
   comments = "Created by terraform"
 }
-
-resource "truenas_dataset" "torrent" {
-  name     = "torrent"
-  pool     = var.truenas_pool
-  comments = "Created by terraform"
-}
