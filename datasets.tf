@@ -61,3 +61,10 @@ resource "truenas_dataset" "tv_show" {
   parent   = truenas_dataset.video.name
   comments = "Created by terraform"
 }
+
+resource "truenas_dataset" "tv_anime" {
+  name     = "tv-anime"
+  pool     = var.truenas_pool
+  parent   = truenas_dataset.video.name
+  comments = "Created by terraform"
+}
