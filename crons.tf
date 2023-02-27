@@ -1,3 +1,8 @@
+resource "random_integer" "cronjob_minute" {
+  min = 1
+  max = 59
+}
+
 resource "truenas_cronjob" "acme" {
   enabled     = true
   user        = "root"
@@ -7,7 +12,7 @@ resource "truenas_cronjob" "acme" {
     dom    = "*"
     dow    = "*"
     hour   = "0"
-    minute = "0"
+    minute = random_integer.cronjob_minute.result
     month  = "*"
   }
   hide_stdout = true

@@ -3,3 +3,6 @@ provider "truenas" {
   base_url = var.truenas_base_url
   debug    = var.truenas_debug
 }
+
+provider "random" {
+}
