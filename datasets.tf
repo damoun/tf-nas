@@ -30,3 +30,22 @@ resource "truenas_dataset" "private" {
   comments = "Created by terraform"
 }
 
+resource "truenas_dataset" "video" {
+  name     = "video"
+  pool     = var.truenas_pool
+  comments = "Created by terraform"
+}
+
+resource "truenas_dataset" "movie" {
+  name     = "movie"
+  pool     = var.truenas_pool
+  parent   = truenas_dataset.video.name
+  comments = "Created by terraform"
+}
+
+resource "truenas_dataset" "tv_show" {
+  name     = "tv-show"
+  pool     = var.truenas_pool
+  parent   = truenas_dataset.video.name
+  comments = "Created by terraform"
+}
