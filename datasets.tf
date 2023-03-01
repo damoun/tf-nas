@@ -11,16 +11,9 @@ resource "truenas_dataset" "time_machine" {
   comments = "Created by terraform"
 }
 
-resource "truenas_dataset" "k8s" {
-  name     = "kubernetes"
-  pool     = var.truenas_pool
-  comments = "Created by terraform"
-}
-
 resource "truenas_dataset" "persistent_volume" {
   name     = "persistent-volume"
   pool     = var.truenas_pool
-  parent   = truenas_dataset.k8s.name
   comments = "Created by terraform"
 }
 
