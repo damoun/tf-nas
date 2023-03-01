@@ -49,3 +49,21 @@ resource "truenas_share_smb" "public" {
   path          = truenas_dataset.public.mount_point
   comment       = "Created by terraform"
 }
+
+resource "truenas_share_nfs" "torrent" {
+  enabled      = true
+  paths        = [truenas_dataset.transmission_config.mount_point]
+  mapall_user  = "nobody"
+  mapall_group = "nobody"
+  hosts        = ["192.168.2.129", "192.168.2.117", "192.168.2.131"]
+  comment      = "Created by terraform"
+}
+
+resource "truenas_share_nfs" "transmission_downloads" {
+  enabled      = true
+  paths        = [truenas_dataset.transmission_downloads.mount_point]
+  mapall_user  = "nobody"
+  mapall_group = "nobody"
+  hosts        = ["192.168.2.129", "192.168.2.117", "192.168.2.131"]
+  comment      = "Created by terraform"
+}
