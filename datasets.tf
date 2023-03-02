@@ -17,27 +17,6 @@ resource "truenas_dataset" "persistent_volume" {
   comments = "Created by terraform"
 }
 
-resource "truenas_dataset" "torrent" {
-  name     = "torrent"
-  pool     = var.truenas_pool
-  parent   = truenas_dataset.persistent_volume.name
-  comments = "Created by terraform"
-}
-
-resource "truenas_dataset" "transmission_config" {
-  name     = "transmission-config"
-  pool     = var.truenas_pool
-  parent   = "${truenas_dataset.torrent.parent}/${truenas_dataset.torrent.name}"
-  comments = "Created by terraform"
-}
-
-resource "truenas_dataset" "transmission_downloads" {
-  name     = "transmission-downloads"
-  pool     = var.truenas_pool
-  parent   = "${truenas_dataset.torrent.parent}/${truenas_dataset.torrent.name}"
-  comments = "Created by terraform"
-}
-
 resource "truenas_dataset" "private" {
   name     = "private"
   pool     = var.truenas_pool
