@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "damoun"
+
+    workspaces {
+      name = "nas"
+    }
+  }
   required_providers {
     truenas = {
       source  = "dariusbakunas/truenas"
