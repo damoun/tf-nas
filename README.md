@@ -8,8 +8,8 @@
 <h4 align="center">My terraform plan for my TrueNAS server.</h4>
 
 <p align="center">
-  <a href="https://github.com/damoun/tf-nas/actions/workflows/lint.yml">
-      <img src="https://github.com/damoun/tf-nas/actions/workflows/lint.yml/badge.svg">
+  <a href="https://github.com/damoun/tf-nas/actions/workflows/terraform.yml">
+      <img src="https://github.com/damoun/tf-nas/actions/workflows/terraform.yml/badge.svg">
   </a>
 </p>
 
