@@ -1,10 +1,12 @@
 variable "truenas_api_key" {
   description = "API key for the TrueNAS server"
+  sensitive   = true
 }
 
 variable "truenas_base_url" {
   type        = string
   description = "Base url for the TrueNAS server"
+  sensitive   = true
 }
 
 variable "truenas_debug" {
