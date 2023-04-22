@@ -11,6 +11,13 @@ resource "truenas_dataset" "time_machine" {
   comments = "Created by terraform"
 }
 
+resource "truenas_dataset" "git" {
+  name     = "git"
+  pool     = var.truenas_pool
+  parent   = truenas_dataset.backup.name
+  comments = "Created by terraform"
+}
+
 resource "truenas_dataset" "persistent_volume" {
   name     = "persistent-volume"
   pool     = var.truenas_pool
