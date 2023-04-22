@@ -80,3 +80,6 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
+        env:
+          TF_VAR_truenas_api_key: ${{ secrets.TRUENAS_API_KEY }}
+          TF_VAR_truenas_base_url: ${{ secrets.TRUENAS_BASE_URL }}
