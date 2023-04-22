@@ -7,6 +7,7 @@ resource "truenas_share_smb" "time_machine" {
   streams       = true
   name          = "Time Machine"
   path_suffix   = "%U"
+  timemachine   = null
   path          = truenas_dataset.time_machine.mount_point
   purpose       = "ENHANCED_TIMEMACHINE"
   comment       = "Created by terraform"
